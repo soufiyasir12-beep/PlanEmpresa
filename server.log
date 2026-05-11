@@ -1,0 +1,68 @@
+
+> temp_app@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+✓ Ready in 529ms
+
+○ Compiling / ...
+ GET / 200 in 6.9s (next.js: 6.3s, application-code: 555ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+Error in chat API: Error: [GoogleGenerativeAI Error]: First content should be with role 'user', got model
+    at POST (src/app/api/chat/route.ts:52:24)
+  50 |     }));
+  51 |
+> 52 |     const chat = model.startChat({
+     |                        ^
+  53 |       history: history,
+  54 |     });
+  55 |
+ POST /api/chat 500 in 1058ms (next.js: 621ms, application-code: 437ms)
+[browser] Error fetching chat: Error: Network response was not ok
+    at handleSubmit (src/components/ChatbotDemo.tsx:41:31)
+  39 |       });
+  40 |
+> 41 |       if (!response.ok) throw new Error("Network response was not ok");
+     |                               ^
+  42 |
+  43 |       const data = await response.json();
+  44 |        (src/components/ChatbotDemo.tsx:49:15)
+ GET / 200 in 444ms (next.js: 130ms, application-code: 313ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+Error in chat API: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent: [400 Bad Request] API key not valid. Please pass a valid API key. [{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"API_KEY_INVALID","domain":"googleapis.com","metadata":{"service":"generativelanguage.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"API key not valid. Please pass a valid API key."}]
+    at async POST (src/app/api/chat/route.ts:63:20)
+  61 |
+  62 |     // Send the latest message and get the response
+> 63 |     const result = await chat.sendMessage(latestMessage);
+     |                    ^
+  64 |     const response = await result.response;
+  65 |     const text = response.text();
+  66 | {
+  status: 400,
+  statusText: 'Bad Request',
+  errorDetails: [
+    {
+      '@type': 'type.googleapis.com/google.rpc.ErrorInfo',
+      reason: 'API_KEY_INVALID',
+      domain: 'googleapis.com',
+      metadata: [Object]
+    },
+    {
+      '@type': 'type.googleapis.com/google.rpc.LocalizedMessage',
+      locale: 'en-US',
+      message: 'API key not valid. Please pass a valid API key.'
+    }
+  ]
+}
+ POST /api/chat 500 in 294ms (next.js: 42ms, application-code: 252ms)
+[browser] Error fetching chat: Error: Network response was not ok
+    at handleSubmit (src/components/ChatbotDemo.tsx:41:31)
+  39 |       });
+  40 |
+> 41 |       if (!response.ok) throw new Error("Network response was not ok");
+     |                               ^
+  42 |
+  43 |       const data = await response.json();
+  44 |        (src/components/ChatbotDemo.tsx:49:15)
