@@ -1,15 +1,17 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Bot, User, Sparkles } from "lucide-react";
+import { useChat } from '@ai-sdk/react';
 
 export default function ChatbotDemo() {
-  const [messages, setMessages] = useState([
-    { role: "model", content: "¡Hola! Soy el recepcionista virtual de AI Solutions & Automation. ¿En qué puedo ayudarte a entender nuestro Plan de Empresa o nuestros servicios B2B?" }
-  ]);
-  const [input, setInput] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
+    initialMessages: [
+      { id: '1', role: "assistant", content: "¡Hola! Soy el recepcionista virtual de AI Solutions & Automation. ¿En qué puedo ayudarte a entender nuestro Plan de Empresa o nuestros servicios B2B?" }
+    ]
+  });
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -19,39 +21,6 @@ export default function ChatbotDemo() {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
-
-    const userMessage = input.trim();
-    setInput("");
-    setMessages(prev => [...prev, { role: "user", content: userMessage }]);
-    setIsLoading(true);
-
-    try {
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          messages: [...messages, { role: "user", content: userMessage }]
-        }),
-      });
-
-      if (!response.ok) throw new Error("Network response was not ok");
-
-      const data = await response.json();
-
-      if (data.error) throw new Error(data.error);
-
-      setMessages(prev => [...prev, { role: "model", content: data.text }]);
-    } catch (error) {
-      console.error("Error fetching chat:", error);
-      setMessages(prev => [...prev, { role: "model", content: "Lo siento, ha ocurrido un error al procesar tu solicitud. Por favor, inténtalo de nuevo." }]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   return (
     <section className="py-24 px-4 max-w-4xl mx-auto" id="chatbot">
@@ -153,7 +122,7 @@ export default function ChatbotDemo() {
             <input
               type="text"
               value={input}
-              onChange={(e) => setInput(e.target.value)}
+              onChange={handleInputChange}
               placeholder="Pregunta sobre nuestro plan de empresa..."
               className="w-full bg-white/5 border border-white/10 rounded-full pl-6 pr-14 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#00F0FF]/50 focus:ring-1 focus:ring-[#00F0FF]/50 transition-all"
               disabled={isLoading}

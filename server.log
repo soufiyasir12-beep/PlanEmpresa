@@ -66,3 +66,930 @@ Error in chat API: Error: [GoogleGenerativeAI Error]: Error fetching from https:
   42 |
   43 |       const data = await response.json();
   44 |        (src/components/ChatbotDemo.tsx:49:15)
+✓ Compiled in 4.6s
+ GET / 200 in 2.2s (next.js: 1265ms, application-code: 902ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+Error [AI_LoadAPIKeyError]: Google Generative AI API key is missing. Pass it using the 'apiKey' parameter or the GOOGLE_GENERATIVE_AI_API_KEY environment variable.
+    at ignore-listed frames {
+  cause: undefined
+}
+ POST /api/chat 200 in 605ms (next.js: 303ms, application-code: 302ms)
+⨯ ./node_modules/@ai-sdk/react/dist/index.mjs:2:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m1 |[0m [90m// src/use-assistant.ts[0m
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { isAbortError } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m {
+  [90m4 |[0m   generateId,
+  [90m5 |[0m   processAssistantStream
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/react/dist/index.mjs:2:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m1 |[0m [90m// src/use-assistant.ts[0m
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { isAbortError } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m {
+  [90m4 |[0m   generateId,
+  [90m5 |[0m   processAssistantStream
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/react/dist/index.mjs:2:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m1 |[0m [90m// src/use-assistant.ts[0m
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { isAbortError } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m {
+  [90m4 |[0m   generateId,
+  [90m5 |[0m   processAssistantStream
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/react/dist/index.mjs:2:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m1 |[0m [90m// src/use-assistant.ts[0m
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { isAbortError } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m {
+  [90m4 |[0m   generateId,
+  [90m5 |[0m   processAssistantStream
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/react/dist/index.mjs:702:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m700 |[0m
+  [90m701 |[0m [90m// src/use-object.ts[0m
+[31m[1m>[0m [90m702 |[0m [36mimport[0m {
+  [90m    |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m703 |[0m   isAbortError [36mas[0m isAbortError2,
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m704 |[0m   safeValidateTypes
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m705 |[0m } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m706 |[0m [36mimport[0m {
+  [90m707 |[0m   asSchema,
+  [90m708 |[0m   isDeepEqualData,
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/react/dist/index.mjs:702:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m700 |[0m
+  [90m701 |[0m [90m// src/use-object.ts[0m
+[31m[1m>[0m [90m702 |[0m [36mimport[0m {
+  [90m    |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m703 |[0m   isAbortError [36mas[0m isAbortError2,
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m704 |[0m   safeValidateTypes
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m705 |[0m } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m706 |[0m [36mimport[0m {
+  [90m707 |[0m   asSchema,
+  [90m708 |[0m   isDeepEqualData,
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/react/dist/index.mjs:702:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m700 |[0m
+  [90m701 |[0m [90m// src/use-object.ts[0m
+[31m[1m>[0m [90m702 |[0m [36mimport[0m {
+  [90m    |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m703 |[0m   isAbortError [36mas[0m isAbortError2,
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m704 |[0m   safeValidateTypes
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m705 |[0m } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m706 |[0m [36mimport[0m {
+  [90m707 |[0m   asSchema,
+  [90m708 |[0m   isDeepEqualData,
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/react/dist/index.mjs:702:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m700 |[0m
+  [90m701 |[0m [90m// src/use-object.ts[0m
+[31m[1m>[0m [90m702 |[0m [36mimport[0m {
+  [90m    |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m703 |[0m   isAbortError [36mas[0m isAbortError2,
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m704 |[0m   safeValidateTypes
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m705 |[0m } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m706 |[0m [36mimport[0m {
+  [90m707 |[0m   asSchema,
+  [90m708 |[0m   isDeepEqualData,
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/react/dist/index.mjs:702:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m700 |[0m
+  [90m701 |[0m [90m// src/use-object.ts[0m
+[31m[1m>[0m [90m702 |[0m [36mimport[0m {
+  [90m    |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m703 |[0m   isAbortError [36mas[0m isAbortError2,
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m704 |[0m   safeValidateTypes
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m705 |[0m } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m706 |[0m [36mimport[0m {
+  [90m707 |[0m   asSchema,
+  [90m708 |[0m   isDeepEqualData,
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/react/dist/index.mjs:702:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m700 |[0m
+  [90m701 |[0m [90m// src/use-object.ts[0m
+[31m[1m>[0m [90m702 |[0m [36mimport[0m {
+  [90m    |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m703 |[0m   isAbortError [36mas[0m isAbortError2,
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m704 |[0m   safeValidateTypes
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m705 |[0m } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m706 |[0m [36mimport[0m {
+  [90m707 |[0m   asSchema,
+  [90m708 |[0m   isDeepEqualData,
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:2:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m1 |[0m [90m// src/index.ts[0m
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { generateId } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m
+  [90m4 |[0m [90m// src/assistant-stream-parts.ts[0m
+  [90m5 |[0m [36mvar[0m textStreamPart = {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:2:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m1 |[0m [90m// src/index.ts[0m
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { generateId } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m
+  [90m4 |[0m [90m// src/assistant-stream-parts.ts[0m
+  [90m5 |[0m [36mvar[0m textStreamPart = {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:2:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m1 |[0m [90m// src/index.ts[0m
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { generateId } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m
+  [90m4 |[0m [90m// src/assistant-stream-parts.ts[0m
+  [90m5 |[0m [36mvar[0m textStreamPart = {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:2:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m1 |[0m [90m// src/index.ts[0m
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { generateId } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m
+  [90m4 |[0m [90m// src/assistant-stream-parts.ts[0m
+  [90m5 |[0m [36mvar[0m textStreamPart = {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:121:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m119 |[0m
+  [90m120 |[0m [90m// src/process-chat-response.ts[0m
+[31m[1m>[0m [90m121 |[0m [36mimport[0m { generateId [36mas[0m generateIdFunction } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m122 |[0m
+  [90m123 |[0m [90m// src/parse-partial-json.ts[0m
+  [90m124 |[0m [36mimport[0m { safeParseJSON } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:121:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m119 |[0m
+  [90m120 |[0m [90m// src/process-chat-response.ts[0m
+[31m[1m>[0m [90m121 |[0m [36mimport[0m { generateId [36mas[0m generateIdFunction } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m122 |[0m
+  [90m123 |[0m [90m// src/parse-partial-json.ts[0m
+  [90m124 |[0m [36mimport[0m { safeParseJSON } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:121:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m119 |[0m
+  [90m120 |[0m [90m// src/process-chat-response.ts[0m
+[31m[1m>[0m [90m121 |[0m [36mimport[0m { generateId [36mas[0m generateIdFunction } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m122 |[0m
+  [90m123 |[0m [90m// src/parse-partial-json.ts[0m
+  [90m124 |[0m [36mimport[0m { safeParseJSON } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:121:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m119 |[0m
+  [90m120 |[0m [90m// src/process-chat-response.ts[0m
+[31m[1m>[0m [90m121 |[0m [36mimport[0m { generateId [36mas[0m generateIdFunction } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m122 |[0m
+  [90m123 |[0m [90m// src/parse-partial-json.ts[0m
+  [90m124 |[0m [36mimport[0m { safeParseJSON } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:124:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m122 |[0m
+  [90m123 |[0m [90m// src/parse-partial-json.ts[0m
+[31m[1m>[0m [90m124 |[0m [36mimport[0m { safeParseJSON } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m125 |[0m
+  [90m126 |[0m [90m// src/fix-json.ts[0m
+  [90m127 |[0m [36mfunction[0m fixJson(input) {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:124:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m122 |[0m
+  [90m123 |[0m [90m// src/parse-partial-json.ts[0m
+[31m[1m>[0m [90m124 |[0m [36mimport[0m { safeParseJSON } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m125 |[0m
+  [90m126 |[0m [90m// src/fix-json.ts[0m
+  [90m127 |[0m [36mfunction[0m fixJson(input) {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:124:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m122 |[0m
+  [90m123 |[0m [90m// src/parse-partial-json.ts[0m
+[31m[1m>[0m [90m124 |[0m [36mimport[0m { safeParseJSON } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m125 |[0m
+  [90m126 |[0m [90m// src/fix-json.ts[0m
+  [90m127 |[0m [36mfunction[0m fixJson(input) {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:124:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m122 |[0m
+  [90m123 |[0m [90m// src/parse-partial-json.ts[0m
+[31m[1m>[0m [90m124 |[0m [36mimport[0m { safeParseJSON } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m    |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m125 |[0m
+  [90m126 |[0m [90m// src/fix-json.ts[0m
+  [90m127 |[0m [36mfunction[0m fixJson(input) {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:1262:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m1260 |[0m
+  [90m1261 |[0m [90m// src/schema.ts[0m
+[31m[1m>[0m [90m1262 |[0m [36mimport[0m { validatorSymbol } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m     |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m1263 |[0m [36mimport[0m zodToJsonSchema [36mfrom[0m [32m"zod-to-json-schema"[0m;
+  [90m1264 |[0m [36mvar[0m schemaSymbol = [33mSymbol[0m.[36mfor[0m([32m"vercel.ai.schema"[0m);
+  [90m1265 |[0m [36mfunction[0m jsonSchema(jsonSchema2, {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:1262:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m1260 |[0m
+  [90m1261 |[0m [90m// src/schema.ts[0m
+[31m[1m>[0m [90m1262 |[0m [36mimport[0m { validatorSymbol } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m     |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m1263 |[0m [36mimport[0m zodToJsonSchema [36mfrom[0m [32m"zod-to-json-schema"[0m;
+  [90m1264 |[0m [36mvar[0m schemaSymbol = [33mSymbol[0m.[36mfor[0m([32m"vercel.ai.schema"[0m);
+  [90m1265 |[0m [36mfunction[0m jsonSchema(jsonSchema2, {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:1262:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m1260 |[0m
+  [90m1261 |[0m [90m// src/schema.ts[0m
+[31m[1m>[0m [90m1262 |[0m [36mimport[0m { validatorSymbol } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m     |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m1263 |[0m [36mimport[0m zodToJsonSchema [36mfrom[0m [32m"zod-to-json-schema"[0m;
+  [90m1264 |[0m [36mvar[0m schemaSymbol = [33mSymbol[0m.[36mfor[0m([32m"vercel.ai.schema"[0m);
+  [90m1265 |[0m [36mfunction[0m jsonSchema(jsonSchema2, {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:1262:1
+Module not found: Can't resolve '@ai-sdk/provider-utils'
+  [90m1260 |[0m
+  [90m1261 |[0m [90m// src/schema.ts[0m
+[31m[1m>[0m [90m1262 |[0m [36mimport[0m { validatorSymbol } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+  [90m     |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m1263 |[0m [36mimport[0m zodToJsonSchema [36mfrom[0m [32m"zod-to-json-schema"[0m;
+  [90m1264 |[0m [36mvar[0m schemaSymbol = [33mSymbol[0m.[36mfor[0m([32m"vercel.ai.schema"[0m);
+  [90m1265 |[0m [36mfunction[0m jsonSchema(jsonSchema2, {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:1263:1
+Module not found: Can't resolve 'zod-to-json-schema'
+  [90m1261 |[0m [90m// src/schema.ts[0m
+  [90m1262 |[0m [36mimport[0m { validatorSymbol } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+[31m[1m>[0m [90m1263 |[0m [36mimport[0m zodToJsonSchema [36mfrom[0m [32m"zod-to-json-schema"[0m;
+  [90m     |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m1264 |[0m [36mvar[0m schemaSymbol = [33mSymbol[0m.[36mfor[0m([32m"vercel.ai.schema"[0m);
+  [90m1265 |[0m [36mfunction[0m jsonSchema(jsonSchema2, {
+  [90m1266 |[0m   validate
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:1263:1
+Module not found: Can't resolve 'zod-to-json-schema'
+  [90m1261 |[0m [90m// src/schema.ts[0m
+  [90m1262 |[0m [36mimport[0m { validatorSymbol } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+[31m[1m>[0m [90m1263 |[0m [36mimport[0m zodToJsonSchema [36mfrom[0m [32m"zod-to-json-schema"[0m;
+  [90m     |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m1264 |[0m [36mvar[0m schemaSymbol = [33mSymbol[0m.[36mfor[0m([32m"vercel.ai.schema"[0m);
+  [90m1265 |[0m [36mfunction[0m jsonSchema(jsonSchema2, {
+  [90m1266 |[0m   validate
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:1263:1
+Module not found: Can't resolve 'zod-to-json-schema'
+  [90m1261 |[0m [90m// src/schema.ts[0m
+  [90m1262 |[0m [36mimport[0m { validatorSymbol } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+[31m[1m>[0m [90m1263 |[0m [36mimport[0m zodToJsonSchema [36mfrom[0m [32m"zod-to-json-schema"[0m;
+  [90m     |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m1264 |[0m [36mvar[0m schemaSymbol = [33mSymbol[0m.[36mfor[0m([32m"vercel.ai.schema"[0m);
+  [90m1265 |[0m [36mfunction[0m jsonSchema(jsonSchema2, {
+  [90m1266 |[0m   validate
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./node_modules/@ai-sdk/ui-utils/dist/index.mjs:1263:1
+Module not found: Can't resolve 'zod-to-json-schema'
+  [90m1261 |[0m [90m// src/schema.ts[0m
+  [90m1262 |[0m [36mimport[0m { validatorSymbol } [36mfrom[0m [32m"@ai-sdk/provider-utils"[0m;
+[31m[1m>[0m [90m1263 |[0m [36mimport[0m zodToJsonSchema [36mfrom[0m [32m"zod-to-json-schema"[0m;
+  [90m     |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m1264 |[0m [36mvar[0m schemaSymbol = [33mSymbol[0m.[36mfor[0m([32m"vercel.ai.schema"[0m);
+  [90m1265 |[0m [36mfunction[0m jsonSchema(jsonSchema2, {
+  [90m1266 |[0m   validate
+
+
+
+Import traces:
+  Client Component Browser:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component Browser]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Client Component Browser]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./node_modules/@ai-sdk/ui-utils/dist/index.mjs [Client Component SSR]
+    ./node_modules/@ai-sdk/react/dist/index.mjs [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Client Component SSR]
+    ./src/components/ChatbotDemo.tsx [Server Component]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+✓ Compiled in 852ms
+ GET / 200 in 381ms (next.js: 112ms, application-code: 269ms)
+[browser] Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly. (<anonymous>)
+⨯ Error: failed to pipe response
+    at ignore-listed frames {
+  [cause]: Error [AI_LoadAPIKeyError]: Google Generative AI API key is missing. Pass it using the 'apiKey' parameter or the GOOGLE_GENERATIVE_AI_API_KEY environment variable.
+      at ignore-listed frames {
+    cause: undefined
+  }
+}
+ POST /api/chat 500 in 430ms (next.js: 75ms, application-code: 355ms)

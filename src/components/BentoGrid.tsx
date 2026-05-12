@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Bot, Cpu, LineChart, Target, Zap, Server } from "lucide-react";
+import { Bot, Cpu, Zap, Server } from "lucide-react";
 
 export default function BentoGrid() {
   const container = {
