@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Bot, User, Sparkles } from "lucide-react";
 import { useChat } from '@ai-sdk/react';
+import ReactMarkdown from 'react-markdown';
 
 export default function ChatbotDemo() {
   const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
@@ -89,9 +90,13 @@ export default function ChatbotDemo() {
                 <div className={`px-5 py-3 rounded-2xl max-w-[80%] text-sm leading-relaxed ${
                   msg.role === "user"
                     ? "bg-[#8A2BE2]/20 border border-[#8A2BE2]/30 text-white rounded-tr-none"
-                    : "glass border border-[#00F0FF]/20 text-gray-200 rounded-tl-none"
+                    : "glass border border-[#00F0FF]/20 text-gray-200 rounded-tl-none prose prose-invert prose-p:leading-relaxed prose-pre:bg-black/50 prose-a:text-[#00F0FF] max-w-full"
                 }`}>
-                  {msg.content}
+                  {msg.role === "user" ? (
+                    msg.content
+                  ) : (
+                    <ReactMarkdown>{msg.content}</ReactMarkdown>
+                  )}
                 </div>
               </motion.div>
             ))}

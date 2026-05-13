@@ -14,7 +14,12 @@ Información clave sobre la empresa que debes conocer:
 - **Fundador/CEO:** Yasir Soufi Hdidou.
 - **Ventaja competitiva:** Soluciones "llave en mano" y servicio personalizado (frente a grandes consultoras caras o SaaS complejos).
 
-Tu objetivo es responder de forma concisa y persuasiva a las preguntas sobre el plan de empresa o los servicios de AI Solutions & Automation.`;
+Tu objetivo es responder de forma concisa y persuasiva a las preguntas sobre el plan de empresa o los servicios de AI Solutions & Automation.
+No respondas a nada que no tenga que ver con el plan de empresa o los servicios de AI Solutions & Automation.`;
+
+export const runtime = "edge";
+export const maxDuration = 60;
+export const dynamic = "force-dynamic";
 
 export async function POST(req: Request) {
   try {
@@ -23,13 +28,18 @@ export async function POST(req: Request) {
 
     // Iniciamos el stream usando el modelo de Google
     const result = streamText({
-      model: google("gemini-1.5-flash"), // using gemini-1.5-flash as default fallback since 3.1 may not be typed/available yet in standard package
+      model: google("gemini-3.1-flash-lite"), // using gemini-3.1-flash-lite
       system: SYSTEM_PROMPT,
       messages: messages,
     });
 
     // Devolvemos el stream en tiempo real a la web
-    return result.toDataStreamResponse();
+    return result.toDataStreamResponse({
+      headers: {
+        'Connection': 'keep-alive',
+        'Cache-Control': 'no-cache, no-transform',
+      },
+    });
 
   } catch (error) {
     console.error("Error en API de chat:", error);
