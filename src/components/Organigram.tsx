@@ -70,7 +70,39 @@ export default function Organigram() {
 
   return (
     <section className="py-24 px-4 overflow-hidden relative perspective-[2000px]" id="equipo">
-      <div className="max-w-5xl mx-auto">
+      
+      {/* ===== BACKGROUND SVG DECORATIONS ===== */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Hexagonal Dot Pattern */}
+        <svg className="absolute inset-0 w-full h-full opacity-[0.025]" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="hex-dots" width="50" height="43.3" patternUnits="userSpaceOnUse" patternTransform="scale(1.5)">
+              <circle cx="25" cy="21.65" r="1.5" fill="#8A2BE2" />
+              <circle cx="0" cy="0" r="1.5" fill="#8A2BE2" />
+              <circle cx="50" cy="0" r="1.5" fill="#8A2BE2" />
+              <circle cx="0" cy="43.3" r="1.5" fill="#8A2BE2" />
+              <circle cx="50" cy="43.3" r="1.5" fill="#8A2BE2" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hex-dots)" />
+        </svg>
+
+        {/* Radial Glow */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[400px] bg-gradient-radial from-[#8A2BE2]/6 to-transparent rounded-full blur-3xl" />
+
+        {/* Pulsing corner nodes */}
+        <motion.div className="absolute top-24 right-12 w-2 h-2 rounded-full bg-[#00F0FF]"
+          animate={{ opacity: [0.2, 0.8, 0.2], scale: [1, 1.5, 1] }}
+          transition={{ duration: 3, repeat: Infinity }} />
+        <motion.div className="absolute bottom-32 left-16 w-2 h-2 rounded-full bg-[#8A2BE2]"
+          animate={{ opacity: [0.2, 0.8, 0.2], scale: [1, 1.5, 1] }}
+          transition={{ duration: 3, repeat: Infinity, delay: 1.5 }} />
+        <motion.div className="absolute top-1/2 right-24 w-1.5 h-1.5 rounded-full bg-[#00F0FF]"
+          animate={{ opacity: [0.1, 0.6, 0.1], scale: [1, 2, 1] }}
+          transition={{ duration: 4, repeat: Infinity, delay: 0.8 }} />
+      </div>
+
+      <div className="max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

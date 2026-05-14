@@ -80,8 +80,44 @@ export default function FinancialPlan() {
   const total = data.reduce((acc, curr) => acc + curr.amount, 0);
 
   return (
-    <section className="py-24 px-4 max-w-5xl mx-auto perspective-[2000px]" id="finanzas">
-      <div className="text-center mb-16">
+    <section className="py-24 px-4 max-w-5xl mx-auto perspective-[2000px] relative" id="finanzas">
+      
+      {/* ===== BACKGROUND SVG DECORATIONS ===== */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Cross-Hair Grid */}
+        <svg className="absolute inset-0 w-full h-full opacity-[0.025]" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="fin-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+              <line x1="40" y1="0" x2="40" y2="80" stroke="#00F0FF" strokeWidth="0.3" />
+              <line x1="0" y1="40" x2="80" y2="40" stroke="#00F0FF" strokeWidth="0.3" />
+              <circle cx="40" cy="40" r="2" fill="none" stroke="#00F0FF" strokeWidth="0.3" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#fin-grid)" />
+        </svg>
+
+        {/* Concentric Rings behind the chart */}
+        <svg className="absolute top-1/4 left-1/4 -translate-x-1/4 w-80 h-80 opacity-[0.04]" viewBox="0 0 300 300" fill="none">
+          <circle cx="150" cy="150" r="140" stroke="#8A2BE2" strokeWidth="0.5" />
+          <circle cx="150" cy="150" r="110" stroke="#00F0FF" strokeWidth="0.5" />
+          <circle cx="150" cy="150" r="80" stroke="#8A2BE2" strokeWidth="0.5" />
+          <circle cx="150" cy="150" r="50" stroke="#00F0FF" strokeWidth="0.5" />
+        </svg>
+
+        {/* Radial Glow */}
+        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-gradient-radial from-[#00F0FF]/5 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-gradient-radial from-[#8A2BE2]/5 to-transparent rounded-full blur-3xl" />
+
+        {/* Pulsing accent dots */}
+        <motion.div className="absolute top-16 left-8 w-1.5 h-1.5 rounded-full bg-[#00F0FF]"
+          animate={{ opacity: [0.2, 0.7, 0.2], scale: [1, 1.5, 1] }}
+          transition={{ duration: 3, repeat: Infinity }} />
+        <motion.div className="absolute bottom-20 right-12 w-1.5 h-1.5 rounded-full bg-[#8A2BE2]"
+          animate={{ opacity: [0.2, 0.7, 0.2], scale: [1, 1.5, 1] }}
+          transition={{ duration: 3, repeat: Infinity, delay: 1.5 }} />
+      </div>
+
+      <div className="text-center mb-16 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -95,7 +131,7 @@ export default function FinancialPlan() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
         {/* Animated Pie Chart / Ring */}
         <div className="relative flex justify-center items-center h-[300px]">
           <svg className="w-64 h-64 transform -rotate-90 drop-shadow-[0_0_15px_rgba(0,240,255,0.2)]">
