@@ -7,20 +7,28 @@ import { useChat } from '@ai-sdk/react';
 import ReactMarkdown from 'react-markdown';
 
 export default function ChatbotDemo() {
-  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
+  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
     initialMessages: [
       { id: '1', role: "assistant", content: "¡Hola! Soy el recepcionista virtual de AI Solutions & Automation. ¿En qué puedo ayudarte a entender nuestro Plan de Empresa o nuestros servicios B2B?" }
-    ]
+    ],
+    onError: (err) => {
+      console.error("Chat error:", err);
+    }
   });
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const isInitialMount = useRef(true);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
-    scrollToBottom();
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+    } else {
+      scrollToBottom();
+    }
   }, [messages]);
 
   return (
@@ -53,7 +61,7 @@ export default function ChatbotDemo() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="glass rounded-3xl border border-white/10 overflow-hidden flex flex-col h-[600px] relative box-glow-cyan"
+        className="glass rounded-3xl border border-white/10 overflow-hidden flex flex-col h-[min(600px,70vh)] relative box-glow-cyan"
       >
         {/* Terminal Header */}
         <div className="bg-[#0B0F19]/80 border-b border-white/10 p-4 flex items-center justify-between backdrop-blur-md z-10">
@@ -73,9 +81,9 @@ export default function ChatbotDemo() {
         {/* Chat Area */}
         <div className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth bg-[#0B0F19]/40 relative">
           <AnimatePresence>
-            {messages.map((msg, idx) => (
+            {messages.map((msg) => (
               <motion.div
-                key={idx}
+                key={msg.id}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className={`flex gap-4 ${msg.role === "user" ? "flex-row-reverse" : ""}`}
@@ -118,6 +126,22 @@ export default function ChatbotDemo() {
               </div>
             </motion.div>
           )}
+          
+          {error && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="flex gap-4"
+            >
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/80 to-red-500 shadow-[0_0_15px_rgba(239,68,68,0.3)] flex items-center justify-center shrink-0">
+                <Bot className="w-5 h-5 text-white" />
+              </div>
+              <div className="bg-red-500/10 border border-red-500/20 text-red-400 rounded-2xl rounded-tl-none px-5 py-3 text-sm">
+                Ups, parece que hubo un error de conexión. Por favor, inténtalo de nuevo.
+              </div>
+            </motion.div>
+          )}
+          
           <div ref={messagesEndRef} />
         </div>
 

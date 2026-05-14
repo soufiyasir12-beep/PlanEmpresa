@@ -1,8 +1,51 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useRef } from "react";
 import { FileText, CheckCircle, PenTool, Home } from "lucide-react";
+
+// --- TiltCard Reusable Logic ---
+const TiltCard = ({ children, className }: any) => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
+  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["5deg", "-5deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    x.set(mouseX / width - 0.5);
+    y.set(mouseY / height - 0.5);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      className={`relative group ${className}`}
+    >
+      <div className="absolute inset-0 bg-[#0B0F19]/80 rounded-2xl z-0 backdrop-blur-xl border border-white/5 transition-colors group-hover:border-white/20" />
+      
+      {/* Content */}
+      <div style={{ transform: "translateZ(30px)" }} className="relative z-10 w-full h-full p-6">
+        {children}
+      </div>
+    </motion.div>
+  );
+};
 
 export default function Timeline() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -47,7 +90,7 @@ export default function Timeline() {
   ];
 
   return (
-    <section className="py-24 px-4 overflow-hidden" id="puesta-en-marcha">
+    <section className="py-24 px-4 overflow-hidden perspective-[2000px]" id="puesta-en-marcha">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-20">
           <motion.h2
@@ -69,7 +112,7 @@ export default function Timeline() {
 
           {/* Animated Line */}
           <motion.div
-            className="absolute left-[50px] md:left-1/2 top-0 w-[2px] bg-gradient-to-b from-[#00F0FF] to-[#8A2BE2] -translate-x-1/2 origin-top"
+            className="absolute left-[50px] md:left-1/2 top-0 w-[2px] bg-gradient-to-b from-[#00F0FF] to-[#8A2BE2] -translate-x-1/2 origin-top shadow-[0_0_15px_#00F0FF]"
             style={{ height: lineHeight }}
           />
 
@@ -92,17 +135,17 @@ export default function Timeline() {
                   transition={{ duration: 0.6 }}
                   className={`w-full md:w-[45%] pl-[80px] md:pl-0 ${milestone.align === "left" ? "md:text-right" : "md:text-left"}`}
                 >
-                  <div className={`glass p-6 rounded-2xl border ${milestone.align === "left" ? "border-[#00F0FF]/30" : "border-[#8A2BE2]/30"}`}>
+                  <TiltCard className={`${milestone.align === "left" ? "group-hover:box-glow-cyan" : "group-hover:box-glow-purple"}`}>
                     <span className={`text-sm font-bold uppercase tracking-wider ${milestone.align === "left" ? "text-[#00F0FF]" : "text-[#8A2BE2]"}`}>
                       {milestone.week}
                     </span>
-                    <h3 className="text-2xl font-bold mt-2 mb-3">{milestone.title}</h3>
-                    <p className="text-gray-400">{milestone.desc}</p>
-                  </div>
+                    <h3 className="text-2xl font-bold mt-2 mb-3 text-white">{milestone.title}</h3>
+                    <p className="text-gray-400 group-hover:text-gray-300 transition-colors">{milestone.desc}</p>
+                  </TiltCard>
                 </motion.div>
 
                 {/* Center Icon */}
-                <div className="absolute left-[50px] md:left-1/2 w-12 h-12 bg-[#0B0F19] border-2 border-white/20 rounded-full flex items-center justify-center -translate-x-1/2 mt-6 md:mt-0 z-10">
+                <div className="absolute left-[50px] md:left-1/2 w-12 h-12 bg-[#0B0F19] border-2 border-white/20 rounded-full flex items-center justify-center -translate-x-1/2 mt-6 md:mt-0 z-10 shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-transform duration-500 hover:scale-125 hover:border-[#00F0FF]/50 hover:shadow-[0_0_20px_#00F0FF]">
                   {milestone.icon}
                 </div>
 

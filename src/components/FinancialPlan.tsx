@@ -1,8 +1,52 @@
 "use client";
 
-import { motion, useInView, animate } from "framer-motion";
+import { motion, useInView, animate, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { PieChart, Wallet, Building, Users } from "lucide-react";
+
+// --- TiltCard Reusable Logic ---
+const TiltCard = ({ children, className, glowColor }: any) => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
+  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["5deg", "-5deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    x.set(mouseX / width - 0.5);
+    y.set(mouseY / height - 0.5);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      className={`relative group ${className}`}
+    >
+      <div className={`absolute inset-0 bg-[#0B0F19]/80 rounded-2xl z-0 backdrop-blur-xl border border-white/5 transition-colors group-hover:border-white/20`} />
+      <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity rounded-2xl z-0 ${glowColor}`} />
+      
+      {/* Content */}
+      <div style={{ transform: "translateZ(20px)" }} className="relative z-10 w-full h-full p-5 flex items-center justify-between">
+        {children}
+      </div>
+    </motion.div>
+  );
+};
 
 function Counter({ from, to, duration = 2 }: { from: number; to: number; duration?: number }) {
   const nodeRef = useRef<HTMLSpanElement>(null);
@@ -28,15 +72,15 @@ function Counter({ from, to, duration = 2 }: { from: number; to: number; duratio
 
 export default function FinancialPlan() {
   const data = [
-    { label: "Capital Social", amount: 1500, color: "#8A2BE2", icon: <Wallet className="w-5 h-5" /> },
-    { label: "Línea ICO", amount: 3000, color: "#00F0FF", icon: <Building className="w-5 h-5" /> },
-    { label: "Micro-Inversor (FFF)", amount: 3000, color: "#3B82F6", icon: <Users className="w-5 h-5" /> },
+    { label: "Capital Social", amount: 1500, color: "#8A2BE2", icon: <Wallet className="w-5 h-5" />, glowColor: "bg-[#8A2BE2]" },
+    { label: "Línea ICO", amount: 3000, color: "#00F0FF", icon: <Building className="w-5 h-5" />, glowColor: "bg-[#00F0FF]" },
+    { label: "Micro-Inversor (FFF)", amount: 3000, color: "#3B82F6", icon: <Users className="w-5 h-5" />, glowColor: "bg-[#3B82F6]" },
   ];
 
   const total = data.reduce((acc, curr) => acc + curr.amount, 0);
 
   return (
-    <section className="py-24 px-4 max-w-5xl mx-auto" id="finanzas">
+    <section className="py-24 px-4 max-w-5xl mx-auto perspective-[2000px]" id="finanzas">
       <div className="text-center mb-16">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -54,7 +98,7 @@ export default function FinancialPlan() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Animated Pie Chart / Ring */}
         <div className="relative flex justify-center items-center h-[300px]">
-          <svg className="w-64 h-64 transform -rotate-90">
+          <svg className="w-64 h-64 transform -rotate-90 drop-shadow-[0_0_15px_rgba(0,240,255,0.2)]">
             {/* Background Ring */}
             <circle
               cx="128" cy="128" r="110"
@@ -92,8 +136,8 @@ export default function FinancialPlan() {
           </svg>
 
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-            <span className="text-gray-400 text-sm mb-1">Inversión Total</span>
-            <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-[#8A2BE2]">
+            <span className="text-gray-400 text-sm mb-1 uppercase tracking-widest font-bold">Inversión Total</span>
+            <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-[#8A2BE2] drop-shadow-[0_0_10px_rgba(0,240,255,0.5)]">
               <Counter from={0} to={total} duration={2} />
             </div>
           </div>
@@ -108,33 +152,34 @@ export default function FinancialPlan() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="glass p-5 rounded-2xl flex items-center justify-between border-l-4"
-              style={{ borderLeftColor: item.color }}
             >
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-white/5" style={{ color: item.color }}>
-                  {item.icon}
+              <TiltCard glowColor={item.glowColor} className="border-l-4" style={{ borderLeftColor: item.color }}>
+                <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-xl bg-white/5 shadow-inner" style={{ color: item.color }}>
+                    {item.icon}
+                  </div>
+                  <span className="font-bold text-lg text-white">{item.label}</span>
                 </div>
-                <span className="font-semibold text-lg">{item.label}</span>
-              </div>
-              <div className="text-xl" style={{ color: item.color }}>
-                <Counter from={0} to={item.amount} duration={1.5} />
-              </div>
+                <div className="text-xl font-bold" style={{ color: item.color, textShadow: `0 0 10px ${item.color}40` }}>
+                  <Counter from={0} to={item.amount} duration={1.5} />
+                </div>
+              </TiltCard>
             </motion.div>
           ))}
 
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 1 }}
-            className="mt-8 p-4 bg-gradient-to-r from-[#00F0FF]/10 to-[#8A2BE2]/10 rounded-xl border border-white/10"
+            className="mt-8 p-6 bg-gradient-to-br from-[#00F0FF]/10 to-[#8A2BE2]/10 rounded-2xl border border-white/10 shadow-[0_0_20px_rgba(138,43,226,0.15)] relative overflow-hidden group"
           >
-            <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-              <PieChart className="w-5 h-5 text-[#00F0FF]" /> Proyección Año 1
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+            <h4 className="font-bold text-white mb-3 flex items-center gap-2 text-lg">
+              <PieChart className="w-6 h-6 text-[#00F0FF]" /> Proyección Año 1
             </h4>
-            <p className="text-sm text-gray-300">
-              Ingresos proyectados de <span className="text-white font-bold">42.000 €</span> con un Beneficio Neto Previsto de <span className="text-[#00F0FF] font-bold">9.350 €</span>, reinvertido íntegramente en crecimiento.
+            <p className="text-gray-300 leading-relaxed">
+              Ingresos proyectados de <span className="text-white font-bold text-lg">42.000 €</span> con un Beneficio Neto Previsto de <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-[#00d0ff] font-bold text-lg">9.350 €</span>, reinvertido íntegramente en crecimiento orgánico.
             </p>
           </motion.div>
         </div>
