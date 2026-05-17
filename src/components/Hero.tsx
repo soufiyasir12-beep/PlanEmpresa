@@ -100,7 +100,7 @@ export default function Hero() {
     const updateOpacity = () => {
       if (!video) return;
       const { currentTime, duration } = video;
-      
+
       if (isNaN(duration) || duration === 0) {
         fadeFrame = requestAnimationFrame(updateOpacity);
         return;
@@ -112,7 +112,7 @@ export default function Hero() {
       } else if (duration - currentTime < fadeDuration) {
         newOpacity = Math.max(0, (duration - currentTime) / fadeDuration);
       }
-      
+
       video.style.opacity = newOpacity.toString();
       fadeFrame = requestAnimationFrame(updateOpacity);
     };
@@ -126,7 +126,7 @@ export default function Hero() {
       setTimeout(() => {
         if (video) {
           video.currentTime = 0;
-          video.play().catch(() => {});
+          video.play().catch(() => { });
         }
       }, 100);
     };
@@ -134,7 +134,7 @@ export default function Hero() {
     video.addEventListener('play', handlePlay);
     video.addEventListener('ended', handleEnded);
 
-    video.play().catch(() => {});
+    video.play().catch(() => { });
 
     return () => {
       if (video) {
@@ -147,7 +147,7 @@ export default function Hero() {
 
   return (
     <section className="relative z-0 min-h-screen flex flex-col overflow-visible pt-12 pb-10">
-      
+
       {/* Background Video */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <video
@@ -178,7 +178,7 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div className="flex-1 flex flex-col items-center justify-center relative z-10 px-4 mt-8">
-        
+
         {/* Morphing Aura behind main text */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-gradient-to-tr from-[#6366f1]/30 via-[#a855f7]/30 to-[#fcd34d]/30 blur-2xl animate-[aura-morph_15s_ease-in-out_infinite] -z-10" />
 
@@ -195,7 +195,7 @@ export default function Hero() {
             Solutions
           </span>
         </motion.h1>
-        
+
         <motion.div
           className="text-[40px] md:text-[60px] lg:text-[80px] font-heading font-normal text-[var(--foreground)] leading-[1.02] tracking-[-0.024em] -mt-4 mb-6 text-center relative"
           initial={{ opacity: 0, y: 20 }}
@@ -238,9 +238,9 @@ export default function Hero() {
       {/* Logo Marquee */}
       <div className="w-full max-w-5xl mx-auto pb-10 mt-24 overflow-hidden relative z-10 flex flex-col md:flex-row items-center gap-12 px-8">
         <div className="text-[var(--foreground)]/50 text-sm whitespace-nowrap text-center md:text-left">
-          Con la confianza de empresas<br/>innovadoras en España
+          Con las herramientas de las <br />mejores empresas
         </div>
-        
+
         <div className="flex-1 overflow-hidden relative [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex gap-16 w-max animate-[marquee_20s_linear_infinite]">
             {[...Array(2)].map((_, i) => (

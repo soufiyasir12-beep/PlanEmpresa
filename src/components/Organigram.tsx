@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { User, Users, Megaphone, Wrench } from "lucide-react";
+import { User, Users, Megaphone, Wrench, Briefcase, ShieldAlert, Zap } from "lucide-react";
 
 // --- TiltCard Reusable Logic ---
 const TiltCard = ({ children, className }: any) => {
@@ -34,7 +34,7 @@ const TiltCard = ({ children, className }: any) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className={`relative group ${className}`}
+      className={`relative group rounded-2xl ${className}`}
     >
       <div className="absolute inset-0 bg-[#0B0F19]/90 rounded-2xl z-0 backdrop-blur-xl border border-white/5 transition-colors group-hover:border-white/20 shadow-xl" />
       
@@ -108,7 +108,7 @@ export default function Organigram() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-4xl md:text-5xl font-bold mb-4 font-heading"
           >
             Estructura y <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-[#8A2BE2]">Equipo</span>
           </motion.h2>
@@ -126,28 +126,28 @@ export default function Organigram() {
         >
           {/* SVG Lines connecting nodes */}
           <div className="absolute inset-0 pointer-events-none hidden md:block z-0">
-            <svg className="w-full h-full" style={{ minHeight: "400px" }}>
+            <svg className="w-full h-full" viewBox="0 0 1024 400" preserveAspectRatio="xMidYMin slice" style={{ minHeight: "400px" }}>
               {/* Vertical line from CEO */}
-              <motion.path id="path1" d="M 500 100 L 500 180" stroke="var(--color-neon-cyan)" strokeWidth="2" strokeDasharray="5 5" fill="none" variants={lineVariants} />
+              <motion.path id="path1" d="M 512 100 L 512 180" stroke="var(--color-neon-cyan)" strokeWidth="2" strokeDasharray="5 5" fill="none" variants={lineVariants} />
               {/* Horizontal line distributing to departments */}
-              <motion.path id="path2" d="M 200 180 L 800 180" stroke="var(--color-neon-cyan)" strokeWidth="2" strokeDasharray="5 5" fill="none" variants={lineVariants} />
+              <motion.path id="path2" d="M 170 180 L 854 180" stroke="var(--color-neon-cyan)" strokeWidth="2" strokeDasharray="5 5" fill="none" variants={lineVariants} />
               {/* Vertical lines to departments */}
-              <motion.path id="path3" d="M 200 180 L 200 220" stroke="var(--color-neon-purple)" strokeWidth="2" strokeDasharray="5 5" fill="none" variants={lineVariants} />
-              <motion.path id="path4" d="M 500 180 L 500 220" stroke="var(--color-neon-cyan)" strokeWidth="2" strokeDasharray="5 5" fill="none" variants={lineVariants} />
-              <motion.path id="path5" d="M 800 180 L 800 220" stroke="var(--color-neon-purple)" strokeWidth="2" strokeDasharray="5 5" fill="none" variants={lineVariants} />
+              <motion.path id="path3" d="M 170 180 L 170 220" stroke="var(--color-neon-purple)" strokeWidth="2" strokeDasharray="5 5" fill="none" variants={lineVariants} />
+              <motion.path id="path4" d="M 512 180 L 512 220" stroke="var(--color-neon-cyan)" strokeWidth="2" strokeDasharray="5 5" fill="none" variants={lineVariants} />
+              <motion.path id="path5" d="M 854 180 L 854 220" stroke="var(--color-neon-purple)" strokeWidth="2" strokeDasharray="5 5" fill="none" variants={lineVariants} />
               
               {/* Animated Data Packets (Glowing Dots) */}
               <circle r="4" fill="#00F0FF" filter="drop-shadow(0 0 5px #00F0FF)">
-                <animateMotion dur="2s" repeatCount="indefinite" path="M 500 100 L 500 180" />
+                <animateMotion dur="2s" repeatCount="indefinite" path="M 512 100 L 512 180" />
               </circle>
               <circle r="4" fill="#8A2BE2" filter="drop-shadow(0 0 5px #8A2BE2)">
-                <animateMotion dur="2.5s" repeatCount="indefinite" path="M 500 180 L 200 180 L 200 220" />
+                <animateMotion dur="2.5s" repeatCount="indefinite" path="M 512 180 L 170 180 L 170 220" />
               </circle>
               <circle r="4" fill="#00F0FF" filter="drop-shadow(0 0 5px #00F0FF)">
-                <animateMotion dur="1.5s" repeatCount="indefinite" path="M 500 180 L 500 220" />
+                <animateMotion dur="1.5s" repeatCount="indefinite" path="M 512 180 L 512 220" />
               </circle>
               <circle r="4" fill="#8A2BE2" filter="drop-shadow(0 0 5px #8A2BE2)">
-                <animateMotion dur="2.5s" repeatCount="indefinite" path="M 500 180 L 800 180 L 800 220" />
+                <animateMotion dur="2.5s" repeatCount="indefinite" path="M 512 180 L 854 180 L 854 220" />
               </circle>
             </svg>
           </div>
@@ -197,6 +197,79 @@ export default function Organigram() {
                 <p className="text-sm text-gray-400">Prompters y Especialistas en IA</p>
               </TiltCard>
             </motion.div>
+          </div>
+        </motion.div>
+
+        {/* --- NUEVA SECCIÓN: RECURSOS HUMANOS --- */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="mt-32 pt-16 border-t border-white/10 relative"
+        >
+          {/* Header RRHH */}
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold mb-4 font-heading">Políticas de <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-[#8A2BE2]">RRHH</span></h3>
+            <p className="text-gray-400 max-w-2xl mx-auto">Gestión del talento, contratación y prevención de riesgos laborales.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Modelo Laboral */}
+            <motion.div variants={itemVariants}>
+              <TiltCard className="h-full hover:box-glow-cyan bg-white/5">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-[#00F0FF]/20 rounded-lg">
+                    <Briefcase className="w-6 h-6 text-[#00F0FF]" />
+                  </div>
+                  <h4 className="text-xl font-bold text-white">Modelo Laboral</h4>
+                </div>
+                <div className="space-y-3">
+                  <div className="inline-flex px-3 py-1 bg-white/10 rounded-full text-xs font-bold text-white mb-2">Remote-First</div>
+                  <p className="text-sm text-gray-300">Operativa 100% remota con remuneración por objetivos.</p>
+                  <p className="text-sm text-gray-300">Formación continua y obligatoria en nuevas herramientas de IA.</p>
+                </div>
+              </TiltCard>
+            </motion.div>
+
+            {/* Contratación */}
+            <motion.div variants={itemVariants}>
+              <TiltCard className="h-full hover:box-glow-purple bg-white/5">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-[#8A2BE2]/20 rounded-lg">
+                    <Zap className="w-6 h-6 text-[#8A2BE2]" />
+                  </div>
+                  <h4 className="text-xl font-bold text-white">Contratación</h4>
+                </div>
+                <div className="space-y-3">
+                  <div className="inline-flex px-3 py-1 bg-white/10 rounded-full text-xs font-bold text-white mb-2">Lean Startup</div>
+                  <p className="text-sm text-gray-300">Inicio con profesionales B2B (Freelancers altamente cualificados).</p>
+                  <p className="text-sm text-gray-300">Escalado a contratos indefinidos al superar hitos de MRR establecidos.</p>
+                </div>
+              </TiltCard>
+            </motion.div>
+
+            {/* Prevención PRL */}
+            <motion.div variants={itemVariants}>
+              <TiltCard className="h-full hover:box-glow-cyan bg-white/5">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-[#00F0FF]/20 rounded-lg">
+                    <ShieldAlert className="w-6 h-6 text-[#00F0FF]" />
+                  </div>
+                  <h4 className="text-xl font-bold text-white">Prevención (PRL)</h4>
+                </div>
+                <div className="space-y-3">
+                  <div className="inline-flex px-3 py-1 bg-white/10 rounded-full text-xs font-bold text-white mb-2">Foco Tecnológico</div>
+                  <ul className="text-sm text-gray-300 list-disc pl-4 space-y-1">
+                    <li>Ergonomía visual y salud postural.</li>
+                    <li>Protocolos estrictos de ciberseguridad.</li>
+                    <li>Prevención proactiva del estrés tecnológico (burnout).</li>
+                  </ul>
+                </div>
+              </TiltCard>
+            </motion.div>
+
           </div>
         </motion.div>
       </div>

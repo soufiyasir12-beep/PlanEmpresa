@@ -2,7 +2,7 @@
 
 import { motion, useInView, animate, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { PieChart, Wallet, Building, Users } from "lucide-react";
+import { PieChart, Wallet, Building, Users, TrendingDown, Landmark, TrendingUp } from "lucide-react";
 
 // --- TiltCard Reusable Logic ---
 const TiltCard = ({ children, className, glowColor }: any) => {
@@ -35,7 +35,7 @@ const TiltCard = ({ children, className, glowColor }: any) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className={`relative group ${className}`}
+      className={`relative group rounded-2xl ${className}`}
     >
       <div className={`absolute inset-0 bg-[#0B0F19]/80 rounded-2xl z-0 backdrop-blur-xl border border-white/5 transition-colors group-hover:border-white/20`} />
       <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity rounded-2xl z-0 ${glowColor}`} />
@@ -122,7 +122,7 @@ export default function FinancialPlan() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-4"
+          className="text-4xl md:text-5xl font-bold mb-4 font-heading"
         >
           Plan <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-[#8A2BE2]">Financiero</span>
         </motion.h2>
@@ -220,6 +220,68 @@ export default function FinancialPlan() {
           </motion.div>
         </div>
       </div>
+
+      {/* --- NUEVA SECCIÓN: KPIs FINANCIEROS --- */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mt-20 border-t border-white/10 pt-16 relative z-10"
+      >
+        <div className="text-center mb-10">
+          <h3 className="text-3xl font-bold mb-2 font-heading">Métricas y <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-[#8A2BE2]">Proyección</span></h3>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Costes */}
+          <TiltCard glowColor="bg-red-500" className="h-full bg-[#0B0F19]/50">
+            <div className="w-full">
+              <div className="flex justify-between items-start mb-4">
+                <div className="p-2 bg-red-500/20 rounded-lg">
+                  <TrendingDown className="w-5 h-5 text-red-400" />
+                </div>
+                <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Gastos</span>
+              </div>
+              <h4 className="text-lg font-bold text-white mb-2">Distribución de Costes</h4>
+              <ul className="text-sm text-gray-400 space-y-1">
+                <li>• Infraestructura API y Servidores</li>
+                <li>• Licencias SaaS y Herramientas</li>
+                <li>• Marketing de captación inicial</li>
+              </ul>
+            </div>
+          </TiltCard>
+
+          {/* Impuestos */}
+          <TiltCard glowColor="bg-[#00F0FF]" className="h-full bg-[#0B0F19]/50">
+             <div className="w-full">
+              <div className="flex justify-between items-start mb-4">
+                <div className="p-2 bg-[#00F0FF]/20 rounded-lg">
+                  <Landmark className="w-5 h-5 text-[#00F0FF]" />
+                </div>
+                <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Fiscalidad</span>
+              </div>
+              <h4 className="text-lg font-bold text-white mb-2">Impuestos</h4>
+              <div className="text-3xl font-bold text-[#00F0FF] mb-2">15%</div>
+              <p className="text-sm text-gray-400">Tributación ventajosa (Impuesto de Sociedades para empresas de nueva creación).</p>
+            </div>
+          </TiltCard>
+
+          {/* Tesorería */}
+          <TiltCard glowColor="bg-[#8A2BE2]" className="h-full bg-[#0B0F19]/50">
+             <div className="w-full">
+              <div className="flex justify-between items-start mb-4">
+                <div className="p-2 bg-[#8A2BE2]/20 rounded-lg">
+                  <TrendingUp className="w-5 h-5 text-[#8A2BE2]" />
+                </div>
+                <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Flujo</span>
+              </div>
+              <h4 className="text-lg font-bold text-white mb-2">Ratios y Tesorería</h4>
+              <p className="text-sm text-gray-400">El préstamo ICO y el fondo FFF garantizan liquidez operativa. Beneficio reinvertido en crecimiento orgánico.</p>
+            </div>
+          </TiltCard>
+        </div>
+      </motion.div>
     </section>
   );
 }
