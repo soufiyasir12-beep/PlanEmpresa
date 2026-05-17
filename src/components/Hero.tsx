@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 // --- Custom Components ---
@@ -225,14 +225,25 @@ export default function Hero() {
           reduciendo costes operativos.
         </motion.p>
 
-        <MagneticButton
-          onClick={scrollToChat}
-          className="group mt-[35px] px-[32px] py-[24px] rounded-full bg-[var(--foreground)] text-[var(--background)] font-bold flex items-center gap-3 transition-colors hover:bg-white relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#8A2BE2]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          <span className="relative z-10">Interactuar con el Producto</span>
-          <ArrowDown className="w-5 h-5 relative z-10 group-hover:translate-y-1 transition-transform" />
-        </MagneticButton>
+        <div className="flex flex-col sm:flex-row items-center gap-4 mt-[35px]">
+          <MagneticButton
+            onClick={scrollToChat}
+            className="group px-[32px] py-[24px] rounded-full bg-[var(--foreground)] text-[var(--background)] font-bold flex items-center gap-3 transition-colors hover:bg-white relative overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#8A2BE2]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <span className="relative z-10">Interactuar con el Producto</span>
+            <ArrowDown className="w-5 h-5 relative z-10 group-hover:translate-y-1 transition-transform" />
+          </MagneticButton>
+
+          <MagneticButton
+            onClick={() => window.open("/Plan_de_Empresa_AISolutions.pdf", "_blank")}
+            className="group px-[32px] py-[24px] rounded-full bg-[var(--foreground)] text-[var(--background)] font-bold flex items-center gap-3 transition-colors hover:bg-white relative overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#8A2BE2]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <span className="relative z-10">Descargar PDF</span>
+            <Download className="w-5 h-5 relative z-10 group-hover:translate-y-1 transition-transform" />
+          </MagneticButton>
+        </div>
       </div>
 
       {/* Logo Marquee */}
