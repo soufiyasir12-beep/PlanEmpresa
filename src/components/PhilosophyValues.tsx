@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, Variants } from "framer-motion";
 import { User, MapPin, Target, Leaf } from "lucide-react";
 
 // --- TiltCard Reusable Logic ---
@@ -47,7 +47,7 @@ const TiltCard = ({ children, className }: any) => {
 };
 
 export default function PhilosophyValues() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -57,7 +57,7 @@ export default function PhilosophyValues() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } },
   };

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Scale, Cloud, Server, Database } from "lucide-react";
 
 export default function OperationsLegal() {
@@ -39,7 +39,7 @@ export default function OperationsLegal() {
     }
   ];
 
-  const lineVariants = {
+  const lineVariants: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: { 
       pathLength: 1, 
@@ -48,7 +48,7 @@ export default function OperationsLegal() {
     }
   };
 
-  const nodeVariants = {
+  const nodeVariants: Variants = {
     hidden: { scale: 0, opacity: 0 },
     visible: { 
       scale: 1, 

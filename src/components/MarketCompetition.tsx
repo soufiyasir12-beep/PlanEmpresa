@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, Variants } from "framer-motion";
 import { Building2, Store, HeartPulse, GraduationCap, Truck, ArrowRight } from "lucide-react";
 
 // --- TiltCard Reusable Logic ---
@@ -63,7 +63,7 @@ const Badge = ({ icon, text, color }: { icon: React.ReactNode, text: string, col
 };
 
 export default function MarketCompetition() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -73,7 +73,7 @@ export default function MarketCompetition() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };

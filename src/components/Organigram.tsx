@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, Variants } from "framer-motion";
 import { User, Users, Megaphone, Wrench, Briefcase, ShieldAlert, Zap } from "lucide-react";
 
 // --- TiltCard Reusable Logic ---
@@ -47,7 +47,7 @@ const TiltCard = ({ children, className }: any) => {
 };
 
 export default function Organigram() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -58,12 +58,12 @@ export default function Organigram() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: { opacity: 1, scale: 1, transition: { type: "spring" as const, stiffness: 100 } },
   };
 
-  const lineVariants = {
+  const lineVariants: Variants = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: { pathLength: 1, opacity: 1, transition: { duration: 1.5, ease: "easeInOut" as const } },
   };
