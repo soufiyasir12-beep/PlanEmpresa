@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import NavigableIndex from "@/components/NavigableIndex";
 import PhilosophyValues from "@/components/PhilosophyValues";
 import BentoGrid from "@/components/BentoGrid";
 import MarketCompetition from "@/components/MarketCompetition";
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#0B0F19]">
       <Hero />
+      <NavigableIndex />
       <PhilosophyValues />
       <BentoGrid />
       <MarketCompetition />
